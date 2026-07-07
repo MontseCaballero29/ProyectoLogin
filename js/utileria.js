@@ -21,11 +21,19 @@ function calcularEdad(fechaNacimiento) {
     let nacimiento = new Date(fechaNacimiento + "T00:00:00");
     let hoy = new Date();
     // Validar que la fecha no sea futura
-    if (nacimiento > hoy) { return 0; }
-    let edad = hoy.getFullYear() - nacimiento.getFullYear();
-    let cumple = new Date(hoy.getFullYear(), nacimiento.getMonth(), nacimiento.getDate());
-    if (hoy < cumple) {edad--;}
+    if (nacimiento > hoy) {return -1; }
 
+    // Validar fecha incorrecta
+    if (isNaN(nacimiento.getTime())) { return NaN;}
+
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    let cumple = new Date(
+        hoy.getFullYear(),
+        nacimiento.getMonth(),
+        nacimiento.getDate()
+    );
+
+    if (hoy < cumple) {edad--;}
     return edad;
 }
 
