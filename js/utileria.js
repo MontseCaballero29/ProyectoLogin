@@ -56,5 +56,27 @@ function validarNombreUsuario(usuario) {
     return expresion.test(usuario);
 }
 
-
+// Valida la CURP
+function validarCurp(curp) {
+    let curpReal = curp.trim().toUpperCase();
+    let curpPatron = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[A-Z0-9]{2}$/;
+    if (!curpPatron.test(curpReal)) {
+        return false;
+    }
+    let ann = curpReal.substring(4, 6);
+    let mes = curpReal.substring(6, 8);
+    let dia = curpReal.substring(8, 10);
+    let annCompleto;
+    if (parseInt(ann) <= 26) {
+        annCompleto = "20" + ann;
+    } else {
+        annCompleto = "19" + ann;
+    }
+    let fechaNacimiento = annCompleto + "-" + mes + "-" + dia;
+    let edad = calcularEdad(fechaNacimiento);
+    if (edad < 0 || isNaN(edad)) {
+        return false;
+    }
+    return true;
+}
 
