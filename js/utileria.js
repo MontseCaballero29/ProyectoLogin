@@ -58,7 +58,7 @@ function validarTelefono(telefono) {
     return expresion.test(telefono);
 }
 
-//Valida que un teléfono tenga exactamente 10 dígitos.
+//Valida que un teléfono tenga exactamente 6 dígitos.
 function validarNumControl(control) {
     let expresion = /^\d{6}$/;
     return expresion.test(control);

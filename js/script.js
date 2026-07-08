@@ -167,6 +167,16 @@ function alternarSubmenuUsuarios() {
     flechaUsuarios.style.transform = estaAbierto ? "rotate(0deg)" : "rotate(90deg)";
 }
 
+// Muestra el formulario de captura únicamente al hacer clic en Registro
+let enlaceRegistro = document.getElementById("enlaceRegistro");
+let seccionCaptura = document.getElementById("seccionCaptura");
+
+enlaceRegistro.addEventListener("click", function (evento) {
+    evento.preventDefault();
+    seccionCaptura.classList.remove("hidden");
+    seccionCaptura.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 let formCaptura = document.getElementById("formCaptura");
 let capturaNombreCompleto = document.getElementById("capturaNombreCompleto");
 let capturaUsuario = document.getElementById("capturaUsuario");
