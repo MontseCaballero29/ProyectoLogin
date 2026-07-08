@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #7635a5;
+    background-color: #a56735;
     color: rgb(226, 230, 254);
     border: none;
     padding: 14px 18px;
@@ -28,7 +28,7 @@
 }
 
 .acordeon-encabezado:hover {
-    background-color: #912cb9;
+    background-color: #b96b2c;
 }
 
 .acordeon-icono {
@@ -43,7 +43,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background-color: rgb(227, 214, 248);
+    background-color: rgb(248, 229, 214);
 }
 
 .acordeon-contenido {
