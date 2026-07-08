@@ -144,3 +144,44 @@ let seccionesBiblioteca = [
 ];
  
 crearAcordeon("#contenedorAcordeonBiblioteca", seccionesBiblioteca);
+
+
+let campoBusqueda = document.getElementById("search-toggle");
+let contenedorAcordeonBiblioteca = document.querySelector("#contenedorAcordeonBiblioteca");
+ 
+campoBusqueda.addEventListener("input", function () {
+    filtrarAcordeonBiblioteca(campoBusqueda.value);
+});
+ 
+function normalizarTexto(texto) {
+    return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+}
+ 
+function filtrarAcordeonBiblioteca(termino) {
+    let terminoNormalizado = normalizarTexto(termino.trim());
+    let secciones = contenedorAcordeonBiblioteca.querySelectorAll(".acordeon-seccion");
+ 
+    secciones.forEach(function (seccion) {
+        let panel = seccion.querySelector(".acordeon-panel");
+        let textoDeLaSeccion = normalizarTexto(seccion.textContent);
+ 
+        if (terminoNormalizado === "") {
+            seccion.classList.remove("oculto");
+            cerrarSeccion(seccion, panel);
+            return;
+        }
+ 
+        let coincide = textoDeLaSeccion.includes(terminoNormalizado);
+ 
+        if (coincide) {
+            seccion.classList.remove("oculto");
+            abrirSeccion(seccion, panel);
+        } else {
+            seccion.classList.add("oculto");
+            cerrarSeccion(seccion, panel);
+        }
+    });
+}
