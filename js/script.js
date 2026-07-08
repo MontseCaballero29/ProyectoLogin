@@ -51,6 +51,12 @@ let mensajeModalEdad = document.getElementById("mensajeModalEdad");
 
 function cerrarModalEdad() {
     modalEdad.classList.add("hidden");
+    modalEdad.classList.remove("flex");
+
+    // El formulario se oculta hasta que se vuelva a elegir Usuarios > Registro
+    seccionCaptura.classList.add("hidden");
+    formCaptura.reset();
+    mensajeCaptura.classList.remove("show");
 }
 
 let seccionesBiblioteca = [
@@ -202,7 +208,7 @@ formCaptura.addEventListener("submit", function (evento) {
     let usuarioValido = validarNombreUsuario(capturaUsuario.value.trim());
     let correoValido = validarCorreo(capturaCorreo.value.trim());
     let passwordValida = validarPassword(capturaPassword.value);
-    let numeroControlValido = validarLongitud(capturaNumeroControl.value.trim(), 8);
+    let numeroControlValido = validarNumControl(capturaNumeroControl.value.trim());
     let fechaNacimientoValida = capturaFechaNacimiento.value !== "";
     let curpValida = validarCurp(capturaCurp.value.trim());
 
@@ -221,13 +227,16 @@ formCaptura.addEventListener("submit", function (evento) {
         mensajeCaptura.textContent = "Usuario guardado correctamente";
         mensajeCaptura.classList.add("show");
 
+        let edad = calcularEdad(capturaFechaNacimiento.value);
         let mayorEdad = esMayorDeEdad(capturaFechaNacimiento.value);
-        mensajeModalEdad.textContent = mayorEdad
-            ? "El usuario capturado es mayor de edad"
-            : "El usuario capturado es menor de edad";
-        modalEdad.classList.remove("hidden");
 
-        formCaptura.reset();
+        mensajeModalEdad.textContent = mayorEdad
+            ? "El usuario capturado es mayor de edad. Tiene " + edad + " años."
+            : "El usuario capturado es menor de edad. Tiene " + edad + " años.";
+
+        // Muestra el modal. El formulario permanece visible hasta cerrar el modal.
+        modalEdad.classList.remove("hidden");
+        modalEdad.classList.add("flex");
     } else {
         mensajeCaptura.classList.remove("show");
     }
