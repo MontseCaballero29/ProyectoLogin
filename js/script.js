@@ -192,6 +192,13 @@ let capturaNumeroControl = document.getElementById("capturaNumeroControl");
 let capturaFechaNacimiento = document.getElementById("capturaFechaNacimiento");
 let capturaCurp = document.getElementById("capturaCurp");
 
+// Impide seleccionar desde el calendario una fecha posterior al día actual.
+let hoyFecha = new Date();
+let anioActual = hoyFecha.getFullYear();
+let mesActual = String(hoyFecha.getMonth() + 1).padStart(2, "0");
+let diaActual = String(hoyFecha.getDate()).padStart(2, "0");
+capturaFechaNacimiento.max = anioActual + "-" + mesActual + "-" + diaActual;
+
 let errorCapturaNombreCompleto = document.getElementById("errorCapturaNombreCompleto");
 let errorCapturaUsuario = document.getElementById("errorCapturaUsuario");
 let errorCapturaCorreo = document.getElementById("errorCapturaCorreo");
@@ -209,7 +216,9 @@ formCaptura.addEventListener("submit", function (evento) {
     let correoValido = validarCorreo(capturaCorreo.value.trim());
     let passwordValida = validarPassword(capturaPassword.value);
     let numeroControlValido = validarNumControl(capturaNumeroControl.value.trim());
-    let fechaNacimientoValida = capturaFechaNacimiento.value !== "";
+    let edad = calcularEdad(capturaFechaNacimiento.value);
+    let fechaNacimientoValida = capturaFechaNacimiento.value !== "" &&
+        !isNaN(edad) && edad >= 18;
     let curpValida = validarCurp(capturaCurp.value.trim());
 
     errorCapturaNombreCompleto.classList.toggle("show", !nombreCompletoValido);
@@ -217,6 +226,17 @@ formCaptura.addEventListener("submit", function (evento) {
     errorCapturaCorreo.classList.toggle("show", !correoValido);
     errorCapturaPassword.classList.toggle("show", !passwordValida);
     errorCapturaNumeroControl.classList.toggle("show", !numeroControlValido);
+
+    // Valida que la fecha exista, no sea futura y corresponda a una persona mayor de edad.
+    if (capturaFechaNacimiento.value === "") {
+        errorCapturaFechaNacimiento.textContent = "Selecciona tu fecha de nacimiento";
+    } else if (isNaN(edad)) {
+        errorCapturaFechaNacimiento.textContent = "La fecha de nacimiento no es válida";
+    } else if (edad < 0) {
+        errorCapturaFechaNacimiento.textContent = "La fecha de nacimiento no puede ser futura";
+    } else if (edad < 18) {
+        errorCapturaFechaNacimiento.textContent = "Debes ser mayor de edad para registrarte";
+    }
     errorCapturaFechaNacimiento.classList.toggle("show", !fechaNacimientoValida);
     errorCapturaCurp.classList.toggle("show", !curpValida);
 
@@ -227,12 +247,8 @@ formCaptura.addEventListener("submit", function (evento) {
         mensajeCaptura.textContent = "Usuario guardado correctamente";
         mensajeCaptura.classList.add("show");
 
-        let edad = calcularEdad(capturaFechaNacimiento.value);
-        let mayorEdad = esMayorDeEdad(capturaFechaNacimiento.value);
-
-        mensajeModalEdad.textContent = mayorEdad
-            ? "El usuario capturado es mayor de edad. Tiene " + edad + " años."
-            : "El usuario capturado es menor de edad. Tiene " + edad + " años.";
+        mensajeModalEdad.textContent =
+            "El usuario capturado es mayor de edad. Tiene " + edad + " años.";
 
         // Muestra el modal. El formulario permanece visible hasta cerrar el modal.
         modalEdad.classList.remove("hidden");
