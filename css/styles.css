@@ -61,9 +61,15 @@
     display: none;
     margin-top: 80px;
 }
-
-
 /* Opciones visibles cuando se abre */
 #sidebar.menu-abierto #menuOpciones {
+    display: block;
+}
+
+.error-text {
+    display: none;
+}
+ 
+.error-text.show {
     display: block;
 }

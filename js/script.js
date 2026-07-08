@@ -46,6 +46,13 @@ enlacesCerrarSesion.forEach(function (enlace) {
     });
 });
 
+let modalEdad = document.getElementById("modalEdad");
+let mensajeModalEdad = document.getElementById("mensajeModalEdad");
+
+function cerrarModalEdad() {
+    modalEdad.classList.add("hidden");
+}
+
 let seccionesBiblioteca = [
     {
         titulo: "Historia y fundación",
@@ -150,3 +157,68 @@ function filtrarAcordeonBiblioteca(termino) {
         }
     });
 }
+
+let submenuUsuarios = document.getElementById("submenuUsuarios");
+let flechaUsuarios = document.getElementById("flechaUsuarios");
+
+function alternarSubmenuUsuarios() {
+    let estaAbierto = !submenuUsuarios.classList.contains("hidden");
+    submenuUsuarios.classList.toggle("hidden");
+    flechaUsuarios.style.transform = estaAbierto ? "rotate(0deg)" : "rotate(90deg)";
+}
+
+let formCaptura = document.getElementById("formCaptura");
+let capturaNombreCompleto = document.getElementById("capturaNombreCompleto");
+let capturaUsuario = document.getElementById("capturaUsuario");
+let capturaCorreo = document.getElementById("capturaCorreo");
+let capturaPassword = document.getElementById("capturaPassword");
+let capturaNumeroControl = document.getElementById("capturaNumeroControl");
+let capturaFechaNacimiento = document.getElementById("capturaFechaNacimiento");
+let capturaCurp = document.getElementById("capturaCurp");
+
+let errorCapturaNombreCompleto = document.getElementById("errorCapturaNombreCompleto");
+let errorCapturaUsuario = document.getElementById("errorCapturaUsuario");
+let errorCapturaCorreo = document.getElementById("errorCapturaCorreo");
+let errorCapturaPassword = document.getElementById("errorCapturaPassword");
+let errorCapturaNumeroControl = document.getElementById("errorCapturaNumeroControl");
+let errorCapturaFechaNacimiento = document.getElementById("errorCapturaFechaNacimiento");
+let errorCapturaCurp = document.getElementById("errorCapturaCurp");
+let mensajeCaptura = document.getElementById("mensajeCaptura");
+
+formCaptura.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    let nombreCompletoValido = soloLetras(capturaNombreCompleto.value.trim());
+    let usuarioValido = validarNombreUsuario(capturaUsuario.value.trim());
+    let correoValido = validarCorreo(capturaCorreo.value.trim());
+    let passwordValida = validarPassword(capturaPassword.value);
+    let numeroControlValido = validarLongitud(capturaNumeroControl.value.trim(), 8);
+    let fechaNacimientoValida = capturaFechaNacimiento.value !== "";
+    let curpValida = validarCurp(capturaCurp.value.trim());
+
+    errorCapturaNombreCompleto.classList.toggle("show", !nombreCompletoValido);
+    errorCapturaUsuario.classList.toggle("show", !usuarioValido);
+    errorCapturaCorreo.classList.toggle("show", !correoValido);
+    errorCapturaPassword.classList.toggle("show", !passwordValida);
+    errorCapturaNumeroControl.classList.toggle("show", !numeroControlValido);
+    errorCapturaFechaNacimiento.classList.toggle("show", !fechaNacimientoValida);
+    errorCapturaCurp.classList.toggle("show", !curpValida);
+
+    let todoValido = nombreCompletoValido && usuarioValido && correoValido &&
+        passwordValida && numeroControlValido && fechaNacimientoValida && curpValida;
+
+    if (todoValido) {
+        mensajeCaptura.textContent = "Usuario guardado correctamente";
+        mensajeCaptura.classList.add("show");
+
+        let mayorEdad = esMayorDeEdad(capturaFechaNacimiento.value);
+        mensajeModalEdad.textContent = mayorEdad
+            ? "El usuario capturado es mayor de edad"
+            : "El usuario capturado es menor de edad";
+        modalEdad.classList.remove("hidden");
+
+        formCaptura.reset();
+    } else {
+        mensajeCaptura.classList.remove("show");
+    }
+});
