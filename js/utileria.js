@@ -58,6 +58,12 @@ function validarTelefono(telefono) {
     return expresion.test(telefono);
 }
 
+//Valida que un teléfono tenga exactamente 10 dígitos.
+function validarNumControl(control) {
+    let expresion = /^\d{6}$/;
+    return expresion.test(control);
+}
+
 // Valida un nombre de usuario.
 function validarNombreUsuario(usuario) {
     let expresion = /^[A-Za-z0-9_]+$/;
