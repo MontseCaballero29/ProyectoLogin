@@ -67,3 +67,46 @@
 #sidebar.menu-abierto #menuOpciones {
     display: block;
 }
+
+/* libros*/
+.libros-seccion {
+    padding: 20px;
+}
+
+.libros-seccion h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.contenedor-libros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+.libro {
+    text-align: center;
+}
+
+.libro img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.libro img:hover {
+    transform: scale(1.05);
+}
+
+.libro p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
