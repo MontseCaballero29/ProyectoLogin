@@ -357,15 +357,16 @@
 
         </div>
 
-        <!--Graph Content -->
+        <!-- Contenido principal -->
         <div id="main-content" class="w-full flex-1">
 
             <div class="flex flex-1 flex-wrap">
 
-                <div class="w-full xl:w-2/3 p-6 xl:max-w-6xl">
+                <!-- Columna central -->
+<!-- Columna central -->
+<div class="w-full xl:w-2/3 p-6 xl:max-w-6xl">
 
-                    <!--"Container" for the graphs"-->
-                    <div class="max-w-full lg:max-w-3xl xl:max-w-5xl">
+    <div class="max-w-full lg:max-w-3xl xl:max-w-5xl">
 
                         <!--/Acordeon-->
                         <div class="p-3" id="seccionInformacion">
@@ -490,95 +491,331 @@
                             <div class="ct-chart ct-golden-section" id="chart1"></div>
                         </div>
 
-                        <!--Table Card-->
-                        <div class="p-3">
-                            <div class="border-b border-stone-300 p-3">
-                                <h5 class="font-bold text-stone-800">Salas y clasificación</h5>
-                            </div>
-                            <div class="p-5">
-                                <table class="w-full p-5 text-stone-700">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-left text-amber-800">Sala</th>
-                                            <th class="text-left text-amber-800">Clasificación</th>
-                                        </tr>
-                                    </thead>
+        <!-- Información de la biblioteca -->
+        <section id="seccionInformacion">
 
-                                    <tbody>
-                                        <tr>
-                                            <td>Jorge L. Tamayo</td>
-                                            <td>000-339</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Anexo Jorge L. Tamayo</td>
-                                            <td>340-539</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Anexo Raúl Bolaños Cacho</td>
-                                            <td>540-861</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Raúl Bolaños Cacho</td>
-                                            <td>861-998</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+            <div class="border-b border-stone-300 p-3">
+                <h5 class="font-bold text-stone-900">
+                    Información de la biblioteca
+                </h5>
+            </div>
 
-                                <p class="py-2"><a href="#seccionInformacion" class="text-lime-700 font-semibold hover:text-amber-800">Ver más en Información...</a></p>
 
-                            </div>
-                        </div>
-                        <!--/table Card-->
+            <div class="p-5 space-y-3">
+
+
+                <!-- Historia y fundación -->
+                <details class="rounded-lg overflow-hidden">
+
+                    <summary
+                        class="cursor-pointer list-none bg-amber-800 text-white font-bold px-5 py-4 flex justify-between items-center">
+
+                        <span>
+                            Historia y fundación
+                        </span>
+
+                        <span>
+                            ▼
+                        </span>
+
+                    </summary>
+
+                    <div class="bg-white px-5 py-4 text-stone-700">
+
+                        La biblioteca fue fundada en 1985 para brindar acceso
+                        a recursos de consulta, lectura e investigación.
 
                     </div>
 
-                </div>
+                </details>
 
-                <div class="w-full xl:w-1/3 p-6 xl:max-w-4xl border-l-1 border-stone-300">
 
-                    <!--"Container" for the graphs"-->
-                    <div class="max-w-sm lg:max-w-3xl xl:max-w-5xl">
+                <!-- El edificio antes de la biblioteca -->
+                <details class="rounded-lg overflow-hidden">
 
-                        <!--Graph Card-->
+                    <summary
+                        class="cursor-pointer list-none bg-amber-800 text-white font-bold px-5 py-4 flex justify-between items-center">
 
-                        <div class="border-b border-stone-300 p-3">
-                            <h5 class="font-bold text-stone-800">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <div class="ct-chart ct-golden-section" id="chart2"></div>
-                        </div>
+                        <span>
+                            El edificio antes de la biblioteca
+                        </span>
 
-                        <!--/Graph Card-->
+                        <span>
+                            ▼
+                        </span>
 
-                        <!--Graph Card-->
-                        <div class="border-b border-stone-300 p-3">
-                            <h5 class="font-bold text-stone-800">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <div class="ct-chart ct-golden-section" id="chart3"></div>
-                        </div>
+                    </summary>
 
-                        <!--/Graph Card-->
+                    <div class="bg-white px-5 py-4 text-stone-700">
 
-                        <!--Graph Card-->
-
-                        <div class="border-b border-stone-300 p-3">
-                            <h5 class="font-bold text-stone-800">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <div class="ct-chart ct-golden-section" id="chart4"></div>
-                        </div>
-
+                        El edificio fue adaptado para albergar salas de consulta,
+                        áreas de lectura y espacios para el resguardo del acervo.
 
                     </div>
 
+                </details>
+
+
+                <!-- Salas y clasificación -->
+                <details class="rounded-lg overflow-hidden">
+
+                    <summary
+                        class="cursor-pointer list-none bg-amber-800 text-white font-bold px-5 py-4 flex justify-between items-center">
+
+                        <span>
+                            Salas y clasificación
+                        </span>
+
+                        <span>
+                            ▼
+                        </span>
+
+                    </summary>
+
+                    <div class="bg-white px-5 py-4 text-stone-700">
+
+                        La biblioteca cuenta con cuatro salas de consulta
+                        y una organización del acervo por categorías.
+
+                    </div>
+
+                </details>
+
+
+                <!-- Colección y materiales destacados -->
+                <details class="rounded-lg overflow-hidden">
+
+                    <summary
+                        class="cursor-pointer list-none bg-amber-800 text-white font-bold px-5 py-4 flex justify-between items-center">
+
+                        <span>
+                            Colección y materiales destacados
+                        </span>
+
+                        <span>
+                            ▼
+                        </span>
+
+                    </summary>
+
+                    <div class="bg-white px-5 py-4 text-stone-700">
+
+                        El acervo incluye literatura, obras clásicas
+                        y materiales de consulta.
+
+                    </div>
+
+                </details>
+
+
+                <!-- Servicios -->
+                <details class="rounded-lg overflow-hidden">
+
+                    <summary
+                        class="cursor-pointer list-none bg-amber-800 text-white font-bold px-5 py-4 flex justify-between items-center">
+
+                        <span>
+                            Servicios
+                        </span>
+
+                        <span>
+                            ▼
+                        </span>
+
+                    </summary>
+
+                    <div class="bg-white px-5 py-4 text-stone-700">
+
+                        Se ofrecen servicios de consulta, préstamo
+                        y devolución de materiales.
+
+                    </div>
+
+                </details>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Libros -->
+        <section class="mt-8">
+
+
+            <!-- Título -->
+            <div class="border-b border-stone-300 p-3">
+
+                <h5 class="font-bold text-stone-900">
+                    Libros
+                </h5>
+
+            </div>
+
+
+            <!-- Contenedor de libros -->
+            <div class="p-5">
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+
+                    <!-- El Principito -->
+                    <div class="text-center">
+
+                        <img
+                            src="img/Libro1.webp"
+                            alt="El Principito"
+                            class="w-24 h-36 mx-auto object-cover rounded">
+
+                        <p class="mt-2 text-sm font-bold text-stone-700">
+                            El Principito
+                        </p>
+
+                    </div>
+
+
+                    <!-- Don Quijote -->
+                    <div class="text-center">
+
+                        <img
+                            src="img/Libro2.jpg"
+                            alt="Don Quijote de la Mancha"
+                            class="w-24 h-36 mx-auto object-cover rounded">
+
+                        <p class="mt-2 text-sm font-bold text-stone-700">
+                            Don Quijote de la Mancha
+                        </p>
+
+                    </div>
+
+
+                    <!-- Cien años de soledad -->
+                    <div class="text-center">
+
+                        <img
+                            src="img/Libro3.jpg"
+                            alt="Cien años de soledad"
+                            class="w-24 h-36 mx-auto object-cover rounded">
+
+                        <p class="mt-2 text-sm font-bold text-stone-700">
+                            Cien años de soledad
+                        </p>
+
+                    </div>
+
+
+                    <!-- El amor en los tiempos del cólera -->
+                    <div class="text-center">
+
+                        <img
+                            src="img/Libro4.jpg"
+                            alt="El amor en los tiempos del cólera"
+                            class="w-24 h-36 mx-auto object-cover rounded">
+
+                        <p class="mt-2 text-sm font-bold text-stone-700">
+                            El amor en los tiempos del cólera
+                        </p>
+
+                    </div>
+
+
                 </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</div>
+
+<!-- Columna derecha -->
+<div class="w-full xl:w-1/3 p-6 xl:max-w-4xl border-l border-stone-300">
+    <div class="max-w-sm lg:max-w-3xl xl:max-w-5xl">
+
+        <!-- Libros más solicitados -->
+        <div class="border-b border-stone-300 p-3">
+            <h5 class="font-bold text-stone-900">Libros más solicitados</h5>
+        </div>
+
+        <div class="p-5">
+
+            <div class="flex items-center mb-5">
+                <span class="font-bold text-amber-800 text-xl mr-3">1</span>
+
+                <img
+                    src="img/Libro3.jpg"
+                    alt="Cien años de soledad"
+                    class="w-12 h-16 object-cover rounded mr-3">
+
+                <div>
+                    <p class="font-bold text-stone-800">Cien años de soledad</p>
+                    <p class="text-sm text-stone-500">Gabriel García Márquez</p>
+                </div>
+            </div>
+
+
+            <div class="flex items-center mb-5">
+                <span class="font-bold text-amber-800 text-xl mr-3">2</span>
+
+                <img
+                    src="img/Libro1.webp"
+                    alt="El Principito"
+                    class="w-12 h-16 object-cover rounded mr-3">
+
+                <div>
+                    <p class="font-bold text-stone-800">El Principito</p>
+                    <p class="text-sm text-stone-500">Antoine de Saint-Exupéry</p>
+                </div>
+            </div>
+
+
+            <div class="flex items-center">
+                <span class="font-bold text-amber-800 text-xl mr-3">3</span>
+
+                <img
+                    src="img/Libro2.jpg"
+                    alt="Don Quijote de la Mancha"
+                    class="w-12 h-16 object-cover rounded mr-3">
+
+                <div>
+                    <p class="font-bold text-stone-800">Don Quijote de la Mancha</p>
+                    <p class="text-sm text-stone-500">Miguel de Cervantes</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Mapa -->
+        <div class="border-b border-stone-300 p-3 mt-6">
+            <h5 class="font-bold text-stone-900">Ubicación</h5>
+        </div>
+
+        <div class="p-5">
+
+            <iframe
+                src="https://www.google.com/maps?q=Biblioteca%20Margarita%20Maza%20de%20Juarez%20Oaxaca&output=embed"
+                width="100%"
+                height="350"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</div>
 
             </div>
 
         </div>
 
     </div>
+
 <!-- JavaScript del menú hamburguesa -->
     <script src="js/utileria.js"></script>
     <script src="js/acordeon.js"></script>
