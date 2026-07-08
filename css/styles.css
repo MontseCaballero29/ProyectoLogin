@@ -17,17 +17,53 @@
 #sidebar {
     transition: all 0.3s ease;
     z-index: 9999;
-    width: 64px;
+
+    width: 0;
+    padding: 0;
+
+    background-color: transparent;
+    box-shadow: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
 }
 
+
+/* Cuando se abre el menú */
 #sidebar.menu-abierto {
-    width: 210px;
+    width: 230px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    background-color: white;
+
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
 }
 
+
+/* Botón hamburguesa siempre visible */
+#menuButton {
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 10000;
+}
+
+
+/* Opciones ocultas cuando está cerrado */
 #menuOpciones {
     display: none;
+    margin-top: 80px;
 }
 
+
+/* Opciones visibles cuando se abre */
 #sidebar.menu-abierto #menuOpciones {
     display: block;
 }
