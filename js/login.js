@@ -5,6 +5,18 @@ let errorCorreo = document.getElementById("errorCorreo");
 let errorPassword = document.getElementById("errorPassword");
 let errorLogin = document.getElementById("errorLogin");
 
+let botonVerPassword = document.getElementById("botonVerPassword");
+let iconoOjoAbierto = document.getElementById("iconoOjoAbierto");
+let iconoOjoCerrado = document.getElementById("iconoOjoCerrado");
+
+botonVerPassword.addEventListener("click", function () {
+    let passwordVisible = campoPassword.type === "text";
+
+    campoPassword.type = passwordVisible ? "password" : "text";
+    iconoOjoAbierto.classList.toggle("hidden", !passwordVisible);
+    iconoOjoCerrado.classList.toggle("hidden", passwordVisible);
+});
+
 formLogin.addEventListener("submit", function (evento) {
     evento.preventDefault();
 
