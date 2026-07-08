@@ -17,15 +17,39 @@
 #sidebar {
     transition: all 0.3s ease;
     z-index: 9999;
-    width: 64px;
+
+    width: 0;
+    padding: 0;
+
+    background: transparent;
+    box-shadow: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 #sidebar.menu-abierto {
     width: 210px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#menuButton {
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 10000;
 }
 
 #menuOpciones {
     display: none;
+    margin-top: 80px;
 }
 
 #sidebar.menu-abierto #menuOpciones {
