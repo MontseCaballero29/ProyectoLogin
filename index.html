@@ -18,42 +18,7 @@
     <!--Replace with your tailwind.css once created-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 
-    <style>
-        .nunito {
-            font-family: 'nunito', font-sans;
-        }
-        
-        .border-b-1 {
-            border-bottom-width: 1px;
-        }
-        
-        .border-l-1 {
-            border-left-width: 1px;
-        }
-        
-        hover\:border-none:hover {
-            border-style: none;
-        }
-        
-#sidebar {
-    transition: all 0.3s ease;
-    z-index: 9999;
-    width: 64px;
-}
-
-#sidebar.menu-abierto {
-    width: 210px;
-}
-
-#menuOpciones {
-    display: none;
-}
-
-#sidebar.menu-abierto #menuOpciones {
-    display: block;
-}
-    </style>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="flex h-screen bg-gray-100 font-sans">
@@ -166,7 +131,6 @@
 <div class="flex flex-row flex-wrap flex-1 flex-grow content-start pl-16">
 
     <div class="h-40 lg:h-20 w-full flex flex-wrap">
-
 
 
         <!-- Barra superior -->
@@ -471,60 +435,8 @@
         </div>
 
     </div>
-
-
-
-    <script>
-    var userMenuDiv = document.getElementById("userMenu");
-    var userMenu = document.getElementById("userButton");
-
-    document.onclick = check;
-
-    function check(e) {
-        var target = (e && e.target) || (event && event.srcElement);
-
-        if (!checkParent(target, userMenuDiv)) {
-
-            if (checkParent(target, userMenu)) {
-
-                if (userMenuDiv.classList.contains("invisible")) {
-                    userMenuDiv.classList.remove("invisible");
-                } else {
-                    userMenuDiv.classList.add("invisible");
-                }
-
-            } else {
-                userMenuDiv.classList.add("invisible");
-            }
-        }
-    }
-
-    function checkParent(t, elm) {
-        while (t && t.parentNode) {
-
-            if (t == elm) {
-                return true;
-            }
-
-            t = t.parentNode;
-        }
-
-        return false;
-    }
-</script>
-
-
 <!-- JavaScript del menú hamburguesa -->
-<script>
-    var menuButton = document.getElementById("menuButton");
-    var sidebar = document.getElementById("sidebar");
-
-    menuButton.addEventListener("click", function () {
-        sidebar.classList.toggle("menu-abierto");
-    });
-</script>
-
-
+    <script src="script.js"></script>
 
 </body>
 

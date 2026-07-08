@@ -1,0 +1,33 @@
+.nunito {
+            font-family: 'nunito', font-sans;
+        }
+        
+        .border-b-1 {
+            border-bottom-width: 1px;
+        }
+        
+        .border-l-1 {
+            border-left-width: 1px;
+        }
+        
+        hover\:border-none:hover {
+            border-style: none;
+        }
+        
+#sidebar {
+    transition: all 0.3s ease;
+    z-index: 9999;
+    width: 64px;
+}
+
+#sidebar.menu-abierto {
+    width: 210px;
+}
+
+#menuOpciones {
+    display: none;
+}
+
+#sidebar.menu-abierto #menuOpciones {
+    display: block;
+}
