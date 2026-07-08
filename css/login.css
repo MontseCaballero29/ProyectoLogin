@@ -1,0 +1,26 @@
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #a2abc0;
+    background-image: radial-gradient(circle at top right, #e4dbbb, #855624 60%);
+}
+
+.login-card {
+    backdrop-filter: blur(6px);
+}
+
+.input-icon-wrapper input:focus + .input-icon,
+.input-icon-wrapper input:focus ~ .input-icon {
+    color: #38bdf8;
+}
+
+.error-text {
+    display: none;
+}
+
+.error-text.show {
+    display: block;
+}
+
+.field-error input {
+    border-color: #f87171;
+}
