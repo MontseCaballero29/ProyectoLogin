@@ -746,69 +746,52 @@ Para ejecutar el sistema de manera local:
 
 # Capturas de pantalla
 
-> Las siguientes imágenes deben agregarse a la carpeta `img` con los nombres indicados para que aparezcan correctamente en el README.
 
 ## Pantalla de inicio de sesión
 
-```markdown
 ![Pantalla de inicio de sesión](img/captura-login.jpeg)
-```
 
 ---
 
 ## Validaciones del login
 
-```markdown
 ![Validaciones del login](img/captura-validaciones-login.jpeg)
-```
 
 ---
 
 ## Pantalla principal del sistema
 
-```markdown
 ![Pantalla principal](img/captura-index.jpeg)
-```
 
 ---
 
 ## Navbar mostrando el usuario activo
 
-```markdown
 ![Usuario en navbar](img/captura-navbar-usuario.jpeg)
-```
 
 ---
 
 ## Menú Usuarios y opción Registro
 
-```markdown
 ![Menú Usuarios](img/captura-menu-usuarios.jpeg)
-```
 
 ---
 
 ## Formulario de captura
 
-```markdown
 ![Formulario de captura](img/captura-formulario.jpeg)
-```
 
 ---
 
 ## Validación de datos
 
-```markdown
 ![Validaciones del formulario](img/captura-validaciones-formulario.jpeg)
-```
 
 ---
 
 ## Modal de edad
 
-```markdown
 ![Modal de edad](img/captura-modal-edad.jpeg)
-```
 
 ---
 
