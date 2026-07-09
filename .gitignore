@@ -1,0 +1,20 @@
+# Configuración del editor
+.vscode/
+
+# Dependencias (si algún día usas npm)
+node_modules/
+
+# Archivos que genera el sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.log
+*.tmp
+
+#archivos de carpetas
+img/captura-boton-cerrar.jpeg
+
+#carpeta completa
+extras/
